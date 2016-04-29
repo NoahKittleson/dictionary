@@ -1,1 +1,22 @@
 index.vtl
+
+<h1>Dictionary</h1>
+
+#if ($words.size() != 0)
+  <ul>
+    #foreach ($word in $words)
+      <li>$word.getName()</li>
+    #end
+  </ul>
+#else
+  <p>You have no words yet!  Add one below!</p>
+#end
+
+
+<form action='/' method='post'>
+  <div class="form-group">
+    <label for="word">Enter a New Word:</label>
+    <input type= "text" class="form-control" id="word" name="word">
+  </div>
+  <button class="btn" type="submit">Submit</submit>
+</form>

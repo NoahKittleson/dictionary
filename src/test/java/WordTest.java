@@ -30,4 +30,11 @@ public class WordTest {
     assertTrue(Word.getAll().contains(testWord));
     assertTrue(Word.getAll().contains(secondWord));
   }
+
+  @Test
+  public void createWord_AccessSpecificWordByID_Word() {
+    Word testWord = new Word("Ragamuffin");
+    Word secondWord = new Word("Rapscallion");
+    assertThat(secondWord, Word.find(secondWord.getId()));
+  }
 }
