@@ -14,4 +14,12 @@ public class WordTest {
     Word testWord = new Word("Ragamuffin");
     assertEquals("Ragamuffin", testWord.getName());
   }
+
+  @Test
+  public void createWord_addAndAccessDefinitionOfWord_true() {
+    Word testWord = new Word("Ragamuffin");
+    Definition testDefinition = new Definition("a person, typically a child, in ragged, dirty clothes");
+    testWord.addDefinition(testDefinition);
+    assertTrue(testWord.getDefinitions().contains(testDefinition));
+  }
 }
