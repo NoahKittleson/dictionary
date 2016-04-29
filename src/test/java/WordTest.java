@@ -22,4 +22,12 @@ public class WordTest {
     testWord.addDefinition(testDefinition);
     assertTrue(testWord.getDefinitions().contains(testDefinition));
   }
+
+  @Test
+  public void createWord_AccessAllWords_true() {
+    Word testWord = new Word("Ragamuffin");
+    Word secondWord = new Word("Rapscallion");
+    assertTrue(Word.getAll().contains(testWord));
+    assertTrue(Word.getAll().contains(secondWord));
+  }
 }
