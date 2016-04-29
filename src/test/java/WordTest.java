@@ -35,6 +35,6 @@ public class WordTest {
   public void createWord_AccessSpecificWordByID_Word() {
     Word testWord = new Word("Ragamuffin");
     Word secondWord = new Word("Rapscallion");
-    assertThat(secondWord, Word.find(secondWord.getId()));
+    assertEquals(secondWord, Word.find(secondWord.getId()));
   }
 }
