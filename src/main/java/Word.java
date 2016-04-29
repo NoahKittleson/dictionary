@@ -33,6 +33,10 @@ public class Word {
     return mId;
   }
 
+  public static void clear() {
+    mInstances.clear();
+  }
+
   public static Word find (int id) {
     try {
       return mInstances.get(id - 1);

@@ -33,6 +33,7 @@ public class AppTest extends FluentTest {
 
   @Test
   public void newWordsActAsLinksToTheirOwnPages() {
+    Word.clear();
     goTo("http://localhost:4567/");
     fill("#word").with("test");
     submit(".btn");

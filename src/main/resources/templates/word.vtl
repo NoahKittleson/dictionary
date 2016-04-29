@@ -1,8 +1,6 @@
-word.vtl
-
 <h1>$word.getName()</h1>
 
-#if ($word.getDefinitions.size() != 0)
+#if ($word.getDefinitions().size() != 0)
   <ol>
     #foreach ($definition in $word.getDefinitions())
       <li>$definition.getText()</li>
@@ -17,5 +15,7 @@ word.vtl
     <label for="definition">Enter a Definition:</label>
     <input type= "text" class="form-control" id="definition" name="definition">
   </div>
-  <button class="btn" type="submit">Submit</submit>
+  <button class="btn" type="submit">Submit</button>
 </form>
+
+<a href="/">back to Dictionary</a>
