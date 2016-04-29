@@ -1,21 +1,26 @@
-<h1>$word.getName()</h1>
+  <h1><span class="wordEntry">$word.getName()</span></h1>
 
-#if ($word.getDefinitions().size() != 0)
-  <ol>
-    #foreach ($definition in $word.getDefinitions())
-      <li>$definition.getText()</li>
+<div class="row">
+  <div class="col-md-6">
+    #if ($word.getDefinitions().size() != 0)
+      <ol>
+        #foreach ($definition in $word.getDefinitions())
+          <li><span class="definition">$definition.getText()</span></li>
+        #end
+      </ol>
+    #else
+      <p>This word has no definitions yet!  Add one below!</p>
     #end
-  </ol>
-#else
-  <p>This word has no definitions yet!  Add one below!</p>
-#end
-
-<form action='/$word.getId()' method='post'>
-  <div class="form-group">
-    <label for="definition">Enter a Definition:</label>
-    <input type= "text" class="form-control" id="definition" name="definition">
   </div>
-  <button class="btn" type="submit">Submit</button>
-</form>
+  <div class="col-md-6">
+    <form action='/word/$word.getId()' method='post'>
+      <div class="form-group">
+        <label for="definition">Enter a Definition:</label>
+        <input type= "text" class="form-control" id="definition" name="definition">
+      </div>
+      <button class="btn" type="submit">Submit</button>
+    </form>
+  </div>
+</div>
 
 <a href="/">back to Dictionary</a>

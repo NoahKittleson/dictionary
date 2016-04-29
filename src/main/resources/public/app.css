@@ -1,0 +1,18 @@
+.title {
+  border-radius: 25px;
+  background: #c6e2ff;
+  padding: 20px;
+  text-align: center;
+  font-weight: 800;
+  font-size: 70px;
+  font-style: italic;
+}
+
+.definition {
+  font-style: italic;
+}
+
+.wordEntry {
+  font-weight: 800;
+  font-size: 50px;
+}

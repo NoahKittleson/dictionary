@@ -1,20 +1,23 @@
-<h1>Dictionary</h1>
-
-#if ($words.size() != 0)
-  <ul>
-    #foreach ($word in $words)
-      <li><a href="/$word.getId()">$word.getName()</a></li>
+<h1 class = "title">Dictionary</h1>
+<div class="row">
+  <div class="col-md-6">
+    #if ($words.size() != 0)
+      <ul>
+        #foreach ($word in $words)
+          <li><a href="/word/$word.getId()">$word.getName()</a></li>
+        #end
+      </ul>
+    #else
+      <p>You have no words yet!  Add one below!</p>
     #end
-  </ul>
-#else
-  <p>You have no words yet!  Add one below!</p>
-#end
-
-
-<form action='/' method='post'>
-  <div class="form-group">
-    <label for="word">Enter a New Word:</label>
-    <input type= "text" class="form-control" id="word" name="word">
   </div>
-  <button class="btn" type="submit">Submit</button>
-</form>
+  <div class="col-md-6">
+    <form action='/' method='post'>
+      <div class="form-group">
+        <label for="word">Enter a New Word:</label>
+        <input type= "text" class="form-control" id="word" name="word">
+      </div>
+      <button class="btn" type="submit">Submit</button>
+    </form>
+  </div>
+</div>

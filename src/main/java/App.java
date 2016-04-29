@@ -26,7 +26,7 @@ public class App {
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
 
-    get("/:id", (request, response) -> {
+    get("/word/:id", (request, response) -> {
       Map<String, Object> model = new HashMap<String, Object>();
       Word word = Word.find(Integer.parseInt(request.params(":id")));
 
@@ -35,7 +35,7 @@ public class App {
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
 
-    post("/:id", (request, response) -> {
+    post("/word/:id", (request, response) -> {
       Map<String, Object> model = new HashMap<String, Object>();
       Word word = Word.find(Integer.parseInt(request.params(":id")));
       String text = request.queryParams("definition");
