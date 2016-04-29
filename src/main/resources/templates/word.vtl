@@ -2,12 +2,12 @@ word.vtl
 
 <h1>$word.getName()</h1>
 
-#if ($words.size() != 0)
-  <ul>
+#if ($word.getDefinitions.size() != 0)
+  <ol>
     #foreach ($definition in $word.getDefinitions())
       <li>$definition.getText()</li>
     #end
-  </ul>
+  </ol>
 #else
   <p>This word has no definitions yet!  Add one below!</p>
 #end

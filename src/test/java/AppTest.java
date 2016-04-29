@@ -34,14 +34,20 @@ public class AppTest extends FluentTest {
   @Test
   public void newWordsActAsLinksToTheirOwnPages() {
     goTo("http://localhost:4567/");
+    fill("#word").with("test");
+    submit(".btn");
+    click("a", withText("test"));
+    assertThat(pageSource()).contains("test");
+  }
+
+  @Test
+  public void submittingADefinitionForAWord() {
+    goTo("http://localhost:4567/");
     fill("#word").with("rag");
     submit(".btn");
     click("a", withText("rag"));
-    assertThat(pageSource()).contains("rag");
+    fill("#definition").with("a piece of cloth");
+    submit(".btn");
+    assertThat(pageSource()).contains("a piece of cloth");
   }
-
-
-
-  // @Test
-  // public void
 }
